@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TH´S 2v2 Tournament</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="vlr-layout">
+        <aside class="sidebar">
+            <div class="vlr-logo">TH´S</div>
+            <p style="font-size: 0.7rem; color: #666; margin-bottom: 5px;">INGRESA 16 JUGADORES</p>
+            <p id="playerCount" style="font-size: 0.8rem; color: #ff4655; margin-bottom: 10px; font-weight: bold;">(0 / 16)</p>
+            
+            <div class="input-group">
+                <input type="text" id="teamInput" placeholder="Nombre jugador..." onkeydown="if(event.key === 'Enter') addTeam()">
+                <button onclick="addTeam()">AÑADIR</button>
+            </div>
+            
+            <ul id="teamsAddedList" class="added-teams"></ul>
+            
+            <div class="control-actions">
+                <button class="btn-main" onclick="shuffleAndAssign()">🔀 CREAR EQUIPOS Y EMPEZAR</button>
+                <button class="btn-undo" onclick="undoAction()">↩ DESHACER</button>
+                <button class="btn-reset" onclick="resetTournament()">⚠️ REINICIAR</button>
+            </div>
+        </aside>
+
+        <main class="tournament-scroll">
+            <div class="brackets-container" id="mainBracket">
+                </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root {
+    --bg: #0f1923;
+    --card: #1f2326;
+    --border: #333;
+    --vlr-red: #ff4655;
+    --vlr-green: #00ff85;
+    --vlr-gold: #ffb800;
+}
+
+body {
+    background-color: var(--bg);
+    color: #ece8e1;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+.vlr-layout { display: flex; height: 100vh; }
+
+.sidebar {
+    width: 250px;
+    background: #111;
+    padding: 20px;
+    border-right: 1px solid var(--vlr-red);
+    display: flex;
+    flex-direction: column;
+}
+
+.vlr-logo { font-weight: bold; font-size: 2.8rem; color: var(--vlr-red); text-align: center; }
+
+.added-teams { 
+    list-style: none; padding: 5px; flex-grow: 1; font-size: 0.8rem; 
+    color: #888; overflow-y: auto; background: #0a0a0a; border: 1px solid #222;
+}
+
+.added-teams li { padding: 4px 8px; border-bottom: 1px solid #1a1a1a; }
+
+.input-group { display: flex; gap: 5px; margin-bottom: 10px; }
+input { background: #222; border: 1px solid #444; color: white; padding: 10px; flex: 1; outline: none; }
+button { cursor: pointer; border: none; font-weight: bold; }
+
+.control-actions { display: flex; flex-direction: column; gap: 8px; padding-top: 15px; border-top: 1px solid #333; }
+.btn-main { background: var(--vlr-red); color: white; padding: 12px; font-size: 0.75rem; }
+.btn-undo { background: #444; color: white; padding: 8px; font-size: 0.8rem; }
+.btn-reset { background: transparent; border: 1px solid var(--vlr-red); color: var(--vlr-red); padding: 8px; }
+
+.tournament-scroll { flex: 1; overflow-x: auto; padding: 40px; }
+.brackets-container { display: flex; gap: 40px; align-items: flex-start; min-width: max-content; }
+
+.column { display: flex; flex-direction: column; width: 230px; }
+.bracket-label { font-size: 0.7rem; letter-spacing: 3px; color: #666; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 20px; }
+
+.round h3 { font-size: 0.6rem; color: #444; text-align: center; margin-bottom: 12px; }
+.match-card { background: var(--card); border: 1px solid var(--border); margin-bottom: 20px; }
+
+.team-slot {
+    padding: 12px 15px; cursor: pointer; border-bottom: 1px solid #111;
+    font-size: 0.8rem; display: flex; justify-content: space-between; font-weight: bold;
+}
+
+.team-slot:hover { background: #292e32; color: var(--vlr-green); }
+.empty { color: #444; pointer-events: none; }
+
+.spacing-r1 { height: 60px; }
+.spacing-r2 { height: 130px; }
+.spacing-r3 { height: 180px; }
+.spacing-r4 { height: 260px; }
+
+.final-col { justify-content: center; height: 100%; min-height: 500px; padding-left: 20px; }
+#g-final .match-card { transform: scale(1.2); border: 2px solid var(--vlr-gold); margin-top: 180px; }
+.gold { color: var(--vlr-gold); border-color: var(--vlr-gold); }
